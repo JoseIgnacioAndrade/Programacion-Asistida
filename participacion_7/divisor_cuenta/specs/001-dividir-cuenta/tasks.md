@@ -16,8 +16,8 @@
 
 **Purpose**: Inicialización del proyecto y estructura en capas según la arquitectura definida.
 
-- [ ] T001 Crear estructura de directorios en capas `lib/domain/`, `lib/data/`, `lib/presentation/`, `test/domain/`, `test/data/` y `test/presentation/`
-- [ ] T002 [P] Verificar que `pubspec.yaml` no tenga dependencias externas adicionales y ejecutar `flutter pub get`
+- [X] T001 Crear estructura de directorios en capas `lib/domain/`, `lib/data/`, `lib/presentation/`, `test/domain/`, `test/data/` y `test/presentation/`
+- [X] T002 [P] Verificar que `pubspec.yaml` no tenga dependencias externas adicionales y ejecutar `flutter pub get`
 
 ---
 
@@ -25,10 +25,10 @@
 
 **Purpose**: Entidades base del dominio e interfaces abstractas que bloquean las historias de usuario.
 
-- [ ] T003 [P] Crear entidad inmutable `Cuenta` en `lib/domain/cuenta.dart` con `montoTotal` (double > 0), `numeroPersonas` (int >= 1) y `porcentajePropina` (double >= 0)
-- [ ] T004 [P] Crear entidad inmutable `Resultado` en `lib/domain/resultado.dart` con `totalPagar` y `cuotaPorPersona`
-- [ ] T005 [P] Crear interfaz abstracta `EstrategiaRedondeo` en `lib/domain/estrategia_redondeo.dart` con método único `double redondear(double valor)`
-- [ ] T006 [P] Crear clase utilitaria `FormateadorMoneda` en `lib/presentation/formateador_moneda.dart` con método estático `formatear(double valor)` que formatea a 2 decimales
+- [X] T003 [P] Crear entidad inmutable `Cuenta` en `lib/domain/cuenta.dart` con `montoTotal` (double > 0), `numeroPersonas` (int >= 1) y `porcentajePropina` (double >= 0)
+- [X] T004 [P] Crear entidad inmutable `Resultado` en `lib/domain/resultado.dart` con `totalPagar` y `cuotaPorPersona`
+- [X] T005 [P] Crear interfaz abstracta `EstrategiaRedondeo` en `lib/domain/estrategia_redondeo.dart` con método único `double redondear(double valor)`
+- [X] T006 [P] Crear clase utilitaria `FormateadorMoneda` en `lib/presentation/formateador_moneda.dart` con método estático `formatear(double valor)` que formatea a 2 decimales
 
 **Checkpoint**: Fundamentos listos. El desarrollo de las historias de usuario puede comenzar.
 
@@ -42,16 +42,16 @@
 
 ### Tests para User Story 1
 
-- [ ] T007 [P] [US1] Escribir pruebas unitarias para `RedondeoExacto` en `test/data/redondeo_exacto_test.dart`
-- [ ] T008 [P] [US1] Escribir pruebas unitarias para `CalcularDivision` con `RedondeoExacto` en `test/domain/calcular_division_test.dart`
+- [X] T007 [P] [US1] Escribir pruebas unitarias para `RedondeoExacto` en `test/data/redondeo_exacto_test.dart`
+- [X] T008 [P] [US1] Escribir pruebas unitarias para `CalcularDivision` con `RedondeoExacto` en `test/domain/calcular_division_test.dart`
 
 ### Implementación para User Story 1
 
-- [ ] T009 [US1] Implementar clase `RedondeoExacto` que implementa `EstrategiaRedondeo` en `lib/data/redondeo_exacto.dart`
-- [ ] T010 [US1] Implementar caso de uso `CalcularDivision` en `lib/domain/calcular_division.dart`
-- [ ] T011 [US1] Implementar `DivisorController` con soporte de cálculo exacto en `lib/presentation/divisor_controller.dart`
-- [ ] T012 [US1] Implementar interfaz base de `PantallaDivisor` en `lib/presentation/pantalla_divisor.dart` para ingresar datos y ver resultado exacto
-- [ ] T013 [US1] Configurar composición e inyección de dependencias en `lib/main.dart` conectando controlador y pantalla
+- [X] T009 [US1] Implementar clase `RedondeoExacto` que implementa `EstrategiaRedondeo` en `lib/data/redondeo_exacto.dart`
+- [X] T010 [US1] Implementar caso de uso `CalcularDivision` en `lib/domain/calcular_division.dart`
+- [X] T011 [US1] Implementar `DivisorController` con soporte de cálculo exacto en `lib/presentation/divisor_controller.dart`
+- [X] T012 [US1] Implementar interfaz base de `PantallaDivisor` en `lib/presentation/pantalla_divisor.dart` para ingresar datos y ver resultado exacto
+- [X] T013 [US1] Configurar composición e inyección de dependencias en `lib/main.dart` conectando controlador y pantalla
 
 **Checkpoint**: User Story 1 completamente funcional e independientemente verificable (MVP alcanzado).
 
@@ -65,12 +65,12 @@
 
 ### Tests para User Story 2
 
-- [ ] T014 [P] [US2] Escribir pruebas unitarias para `RedondeoHaciaArriba` en `test/data/redondeo_hacia_arriba_test.dart`
+- [X] T014 [P] [US2] Escribir pruebas unitarias para `RedondeoHaciaArriba` en `test/data/redondeo_hacia_arriba_test.dart`
 
 ### Implementación para User Story 2
 
-- [ ] T015 [US2] Implementar clase `RedondeoHaciaArriba` que implementa `EstrategiaRedondeo` en `lib/data/redondeo_hacia_arriba.dart`
-- [ ] T016 [US2] Agregar selector de `ModoRedondeo` (Exacto / Hacia Arriba) en `lib/presentation/pantalla_divisor.dart` e integrarlo en `lib/presentation/divisor_controller.dart`
+- [X] T015 [US2] Implementar clase `RedondeoHaciaArriba` que implementa `EstrategiaRedondeo` en `lib/data/redondeo_hacia_arriba.dart`
+- [X] T016 [US2] Agregar selector de `ModoRedondeo` (Exacto / Hacia Arriba) en `lib/presentation/pantalla_divisor.dart` e integrarlo en `lib/presentation/divisor_controller.dart`
 
 **Checkpoint**: User Stories 1 y 2 funcionan e interactúan de manera independiente y verificable.
 
@@ -84,13 +84,13 @@
 
 ### Tests para User Story 3
 
-- [ ] T017 [P] [US3] Escribir pruebas unitarias para `ValidarEntrada` en `test/domain/validar_entrada_test.dart`
+- [X] T017 [P] [US3] Escribir pruebas unitarias para `ValidarEntrada` en `test/domain/validar_entrada_test.dart`
 
 ### Implementación para User Story 3
 
-- [ ] T018 [US3] Implementar caso de uso `ValidarEntrada` en `lib/domain/validar_entrada.dart` con soporte de punto/coma y validaciones de negocio
-- [ ] T019 [US3] Integrar `ValidarEntrada` dentro de `DivisorController` en `lib/presentation/divisor_controller.dart` para retornar mensajes de error en `DivisorEstado`
-- [ ] T020 [US3] Conectar mensajes de error en `PantallaDivisor` en `lib/presentation/pantalla_divisor.dart` suprimiendo el área de resultado si hay errores activos
+- [X] T018 [US3] Implementar caso de uso `ValidarEntrada` en `lib/domain/validar_entrada.dart` con soporte de punto/coma y validaciones de negocio
+- [X] T019 [US3] Integrar `ValidarEntrada` dentro de `DivisorController` en `lib/presentation/divisor_controller.dart` para retornar mensajes de error en `DivisorEstado`
+- [X] T020 [US3] Conectar mensajes de error en `PantallaDivisor` en `lib/presentation/pantalla_divisor.dart` suprimiendo el área de resultado si hay errores activos
 
 **Checkpoint**: Todas las historias de usuario (P1, P2, P3) están implementadas y validadas contra sus criterios de aceptación.
 
@@ -100,11 +100,11 @@
 
 **Purpose**: Verificación de calidad, pruebas de integración y cumplimiento de estándares constitucionales.
 
-- [ ] T021 [P] Crear pruebas unitarias para `FormateadorMoneda` en `test/presentation/formateador_moneda_test.dart`
-- [ ] T022 [P] Crear pruebas de widgets completas en `test/presentation/pantalla_divisor_test.dart` verificando los 6 escenarios de aceptación
-- [ ] T023 Ejecutar análisis estático con `flutter analyze` asegurando cero advertencias y cero errores
-- [ ] T024 Ejecutar toda la suite con `flutter test` verificando que pasen el 100% de las pruebas unitarias y de widgets
-- [ ] T025 Actualizar documentación y enlaces en `README.md`
+- [X] T021 [P] Crear pruebas unitarias para `FormateadorMoneda` en `test/presentation/formateador_moneda_test.dart`
+- [X] T022 [P] Crear pruebas de widgets completas en `test/presentation/pantalla_divisor_test.dart` verificando los 6 escenarios de aceptación
+- [X] T023 Ejecutar análisis estático con `flutter analyze` asegurando cero advertencias y cero errores
+- [X] T024 Ejecutar toda la suite con `flutter test` verificando que pasen el 100% de las pruebas unitarias y de widgets
+- [X] T025 Actualizar documentación y enlaces en `README.md`
 
 ---
 

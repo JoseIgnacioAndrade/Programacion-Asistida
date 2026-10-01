@@ -1,30 +1,24 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:divisor_cuenta/main.dart';
+import 'package:divisor_cuenta/data/redondeo_exacto.dart';
+import 'package:divisor_cuenta/data/redondeo_hacia_arriba.dart';
+import 'package:divisor_cuenta/domain/calcular_division.dart';
+import 'package:divisor_cuenta/domain/validar_entrada.dart';
+import 'package:divisor_cuenta/presentation/divisor_controller.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('La aplicación inicia correctamente y muestra la pantalla principal',
+      (WidgetTester tester) async {
+    final controller = DivisorController(
+      calcularDivision: CalcularDivision(),
+      validarEntrada: ValidarEntrada(),
+      estrategiaExacto: RedondeoExacto(),
+      estrategiaHaciaArriba: RedondeoHaciaArriba(),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(AplicacionDivisorCuenta(controller: controller));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Divisor de Cuenta'), findsOneWidget);
+    expect(find.text('Calcular'), findsOneWidget);
   });
 }
