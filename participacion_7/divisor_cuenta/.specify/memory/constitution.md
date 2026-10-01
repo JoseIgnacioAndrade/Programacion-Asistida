@@ -1,50 +1,50 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: Unversioned (Template) → 1.0.0
+- List of principles defined:
+  - I. Calidad de Código (SOLID)
+  - II. Arquitectura y Reglas de Dependencia
+  - III. Seguridad
+  - IV. Calidad y Pruebas
+  - V. Regla de la Materia (Explicabilidad)
+- Added sections: Core Principles, Governance
+- Removed sections: Placeholder sections 2 and 3 (consolidated into core principles as requested)
+- Follow-up TODOs: None
+-->
+
+# Divisor de Cuenta Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Calidad de Código (SOLID)
+El código debe respetar estrictamente los principios SOLID:
+- **SRP (Single Responsibility Principle):** Una clase debe tener una única razón de cambio. La lógica de cálculo no valida entradas ni formatea salidas.
+- **OCP (Open/Closed Principle):** Agregar una nueva regla de redondeo no debe obligar a editar las clases ya existentes.
+- **LSP (Liskov Substitution Principle):** Cualquier implementación de una interfaz puede sustituir a otra sin que quien la usa deba consultar de qué tipo concreto se trata.
+- **ISP (Interface Segregation Principle):** Interfaces pequeñas y específicas; ningún cliente debe depender de métodos que no utiliza.
+- **DIP (Dependency Inversion Principle):** La capa `presentation` depende de abstracciones de `domain`, nunca de clases concretas de `data`.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Arquitectura y Reglas de Dependencia
+- La estructura del proyecto se organiza en tres capas estrictas: `presentation`, `domain` y `data`.
+- Regla de dependencias unidireccional: `presentation -> domain <- data`.
+- La capa `lib/domain/` es código Dart puro y **NO** debe importar nada proveniente de `package:flutter`.
+- `main.dart` es el **ÚNICO** lugar del sistema donde se instancian implementaciones concretas.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Seguridad
+- Queda estrictamente prohibido almacenar secretos, credenciales o API keys en el repositorio.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Calidad y Pruebas
+- Toda funcionalidad crítica debe contar con pruebas automatizadas.
+- Los criterios de aceptación de cada especificación (spec) deben convertirse en pruebas ejecutables y verificables.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Regla de la Materia (Explicabilidad y Comprensión)
+- Toda función generada por el agente debe poder ser explicada cabalmente por el estudiante: qué hace, por qué existe, qué parámetros recibe, qué valor devuelve y qué errores o excepciones produce.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- **Supremacía:** Esta constitución rige todas las decisiones de diseño, arquitectura e implementación del proyecto.
+- **Cumplimiento:** Toda modificación y revisión de código debe validar el cumplimiento estricto de estos principios.
+- **Procedimiento de Enmienda:** Las modificaciones o ampliaciones de principios requieren justificación documentada y consenso explícito.
+- **Política de Versionado:** Se aplica versionado semántico (MAJOR para cambios incompatibles de principios, MINOR para adición o expansión de principios, PATCH para aclaraciones o correcciones de redacción).
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-01
